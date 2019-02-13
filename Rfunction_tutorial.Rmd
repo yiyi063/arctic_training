@@ -12,9 +12,13 @@ knitr::opts_chunk$set(echo = TRUE)
 -convert to C
 
 ```{r}
+
+source("convert.R")
 airtemps <- c(212,100,32,64,0)
 
 airtemp1 <- (airtemps[1]-32)*5/9
+
+new_fahr_to_celsius(airtemps)
 
 
 ```
