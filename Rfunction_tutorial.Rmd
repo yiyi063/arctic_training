@@ -1,0 +1,60 @@
+---
+title: "Rfunctions_tutorial"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Work with some data in degrees F
+
+-convert to C
+
+```{r}
+airtemps <- c(212,100,32,64,0)
+
+airtemp1 <- (airtemps[1]-32)*5/9
+
+
+```
+
+
+# Write a function to do that
+
+```{r}
+fahr_to_celsius <- function(fahr) {
+  celcius <- (fahr-32)*5/9
+  return(celcius)
+}
+
+celsius <- fahr_to_celsius(airtemps)
+celsius
+
+```
+
+
+# Write a function to go C to F
+```{r}
+celsius_to_fahr <- function(cels) {
+  fahr2 <- cels*9/5+32
+  return(fahr2)
+}
+
+fahrr <- celsius_to_fahr(celsius)
+fahrr
+
+```
+# Show how to document functions
+```{r}
+#' Converts numeric temperature data from degrees Fah to degrees celsius
+#'
+#' @param fahr the value to be converted
+#' @return the converted value in celsius
+
+fahr_to_celsius <- function(fahr) {
+  celcius <- (fahr-32)*5/9
+  return(celcius)
+}
+```
+
