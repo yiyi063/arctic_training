@@ -11,7 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library (dplyr)
 library (tidyr)
 library (ggplot2)
-library(scales)
+library (scales)
+library (leaflet)
+library (DT)
 # to call stats filter - stats::filter()
 ```
 
@@ -97,4 +99,25 @@ ggsave("figures/regional_escapment.png",
 
 
 #generate an interactive map
+
+map the sampling location for escapment 
+
+* find distinct lat/lon/location combination
+
+```{r}
+locations <- esc %>% 
+  distinct(Location, Latitude, Longitude) %>% 
+  drop_na()
+```
+
+```{r,echo=F}
+datatable(locations) %>% 
+
+```
+```{r}
+leaflet(locations) %>% 
+  addTiles() %>% 
+ addMarkers(~ Longitude, ~ Latitude, popup = ~ Location)
+```
+
 
