@@ -17,6 +17,9 @@ library (DT)
 # to call stats filter - stats::filter()
 ```
 
+
+for dyplr/tidyr reference see my [data tidying page](https://yiyi063.github.io/arctic_training/data_formating)
+
 # reformat the data for plotting
 
 Alaska Department of Fish and Game, Division of Commercial Fisheries. 2017. Daily salmon escapement counts from the OceanAK database, Alaska, 1921-2017. Knowledge Network for Biocomplexity. doi:10.5063/F1S46Q6M. 
