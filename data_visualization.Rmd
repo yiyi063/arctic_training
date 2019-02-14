@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library (dplyr)
 library (tidyr)
 library (ggplot2)
+library(scales)
 # to call stats filter - stats::filter()
 ```
 
@@ -77,5 +78,23 @@ ggplot(filter(annual_esc,SASAP.Region=="Kodiak"),aes(x=Year,y=count,color=Specie
   theme(legend.position="bottom",legend.title=element_blank())
 ```
 
+```{r}
+p <- ggplot(annual_esc, aes(x = Year, y = count, color = Species)) + 
+    geom_line() +
+    geom_point() +
+    facet_wrap(~SASAP.Region, scales = "free_y") +
+    ylab("Escapement") +
+    scale_y_continuous(labels = comma) +
+    theme(legend.position="bottom",legend.title=element_blank())
+
+ggsave("figures/regional_escapment.png", 
+       plot=p,
+       width=7,
+       height=8,
+       units="in")
+  
+```
+
 
 #generate an interactive map
+
