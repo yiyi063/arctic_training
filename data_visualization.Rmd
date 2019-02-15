@@ -18,7 +18,7 @@ library (DT)
 ```
 
 
-for dyplr/tidyr reference see my [data tidying page](https://yiyi063.github.io/arctic_training/data_formating)
+for dyplr/tidyr reference see my [data tidying page](https://yiyi063.github.io/arctic_training/data_formating.html)
 
 # reformat the data for plotting
 
